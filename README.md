@@ -1,11 +1,10 @@
 # Manas Srivastava — Portfolio
 
 **The Timeless Analyst** — a single-page portfolio for a Data Analyst & AI
-profile, built with plain HTML, CSS, and JavaScript. No frameworks, no build
-step — clone it and open it.
+profile, built with plain HTML, CSS, and JavaScript. 
 
-🔗 **Live site:** _add your GitHub Pages link here once deployed_ (
-https://manas0540.github.io/manas-srivastava-portfolio/ below)
+🔗 **Live site:**
+https://manas0540.github.io/manas-srivastava-portfolio/ 
 
 ---
 
