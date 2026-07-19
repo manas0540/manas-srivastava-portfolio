@@ -27,14 +27,14 @@
     --sans:'IBM Plex Sans', sans-serif;
     --maxw:1120px;
   }
- 
+
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
   }
- 
+
   body{
     margin:0;
     background:var(--paper);
@@ -48,14 +48,14 @@
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
- 
+
   a{color:inherit;}
   img{max-width:100%; display:block;}
- 
+
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
- 
+
   ::selection{background:var(--green); color:var(--paper);}
- 
+
   /* ---------- NAV ---------- */
   header.nav{
     position:sticky; top:0; z-index:50;
@@ -83,11 +83,11 @@
   .nav-social a{display:flex; color:var(--ink); opacity:0.75; transition:opacity .15s, transform .15s;}
   .nav-social a:hover{opacity:1; transform:translateY(-1px);}
   .nav-social svg{width:18px; height:18px;}
- 
+
   @media (max-width:1040px){
     .nav-links{display:none;}
   }
- 
+
   /* ---------- SECTION SCAFFOLD ---------- */
   section{padding:88px 0;}
   section:first-of-type{padding-top:56px;}
@@ -101,14 +101,14 @@
     font-family:var(--serif); font-weight:600; font-size:clamp(28px,4vw,40px);
     margin:0 0 40px; letter-spacing:-0.01em;
   }
- 
+
   /* ---------- HERO ---------- */
   .hero{padding-top:64px; padding-bottom:80px;}
   .hero-grid{
     display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:start;
   }
   @media (max-width:880px){ .hero-grid{grid-template-columns:1fr;} }
- 
+
   .hero-kicker{
     font-family:var(--mono); font-size:13px; color:var(--ink-soft);
     letter-spacing:0.04em; text-transform:uppercase; margin-bottom:18px;
@@ -122,7 +122,7 @@
     font-size:clamp(19px,2.4vw,24px); color:var(--green); margin:0 0 26px;
   }
   .hero-desc{max-width:52ch; color:var(--ink-soft); font-size:16px; margin-bottom:30px;}
- 
+
   .query-line{
     font-family:var(--mono); font-size:14px; background:var(--ink); color:#DCEBDD;
     padding:14px 18px; border-radius:8px; margin-bottom:30px;
@@ -133,7 +133,7 @@
   .query-line .typed{white-space:pre;}
   .cursor{display:inline-block; width:7px; height:16px; background:var(--green-bright); margin-left:2px; animation:blink 1s steps(1) infinite; vertical-align:-3px;}
   @keyframes blink{0%,49%{opacity:1;}50%,100%{opacity:0;}}
- 
+
   .hero-ctas{display:flex; gap:12px; flex-wrap:wrap;}
   .btn{
     font-family:var(--mono); font-size:13px; text-decoration:none;
@@ -146,7 +146,7 @@
   .btn-primary:hover{background:var(--green); border-color:var(--green); transform:translateY(-2px); box-shadow:0 8px 18px -8px rgba(36,96,63,0.55);}
   .btn-ghost{background:transparent; color:var(--ink);}
   .btn-ghost:hover{background:var(--panel); transform:translateY(-2px); box-shadow:0 8px 18px -10px rgba(20,30,25,0.25);}
- 
+
   /* result panel */
   .result-panel{
     background:var(--panel); border:1px solid var(--line); border-radius:10px;
@@ -168,7 +168,7 @@
   table.rp-table tr:last-child td{border-bottom:none;}
   table.rp-table td.metric{color:var(--green); font-weight:600;}
   .rp-foot{padding:10px 16px; font-family:var(--mono); font-size:11px; color:var(--ink-faint); background:var(--paper-alt); border-top:1px solid var(--line);}
- 
+
   /* ---------- PROFILE ---------- */
   .profile-grid{display:grid; grid-template-columns:200px 1fr; gap:44px; align-items:flex-start;}
   @media (max-width:700px){ .profile-grid{grid-template-columns:1fr;} }
@@ -191,7 +191,7 @@
     background:var(--paper-alt); color:var(--ink-soft); border:1px solid var(--line);
   }
   .lang-chip b{color:var(--ink); font-weight:600;}
- 
+
   /* ---------- NOW ---------- */
   .now-card{
     background:var(--panel); border:1px solid var(--line); border-radius:10px;
@@ -208,7 +208,7 @@
   }
   .now-label{font-family:var(--mono); font-size:12px; color:var(--ink-soft); white-space:nowrap;}
   .now-chips{display:flex; flex-wrap:wrap; gap:8px;}
- 
+
   /* ---------- SKILLS ---------- */
   .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden;}
   .skill-col{background:var(--panel); padding:22px 20px;}
@@ -222,7 +222,7 @@
     font-family:var(--mono); font-size:12px; padding:6px 10px; border-radius:5px;
     background:var(--paper-alt); border:1px solid var(--line); color:var(--ink);
   }
- 
+
   /* ---------- EXPERIENCE ---------- */
   .exp-card{
     background:var(--panel); border:1px solid var(--line); border-radius:10px;
@@ -237,7 +237,7 @@
   ul.exp-list{margin:0 0 18px; padding-left:20px; color:var(--ink-soft); font-size:15px;}
   ul.exp-list li{margin-bottom:8px;}
   ul.exp-list li::marker{color:var(--green-bright);}
- 
+
   /* ---------- PROJECTS ---------- */
   .proj-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px;}
   .proj-card{
@@ -268,7 +268,7 @@
   .proj-links svg{width:14px; height:14px;}
   .proj-card.mini .proj-body{padding:18px 22px;}
   .proj-card.mini .proj-title{font-size:16px;}
- 
+
   /* ---------- ACHIEVEMENTS ---------- */
   .ach-list{border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--panel);}
   .ach-row{
@@ -287,14 +287,14 @@
     width:56px; height:56px; object-fit:cover; border-radius:6px;
     border:1px solid var(--line); flex:none;
   }
- 
+
   /* ---------- VOLUNTEERING ---------- */
   .vol-card{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:24px 28px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;}
   .vol-role{font-family:var(--serif); font-weight:600; font-size:19px; margin-bottom:4px;}
   .vol-org{font-family:var(--mono); font-size:13px; color:var(--green); margin-bottom:10px;}
   .vol-desc{color:var(--ink-soft); font-size:14.5px; max-width:60ch;}
   .vol-meta{font-family:var(--mono); font-size:12px; color:var(--ink-faint); white-space:nowrap;}
- 
+
   /* ---------- EDUCATION ---------- */
   .edu-card{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:26px 28px;}
   .edu-card + .edu-card{margin-top:18px;}
@@ -307,7 +307,7 @@
   .cgpa-bar{flex:1; height:8px; border-radius:4px; background:var(--paper-alt); overflow:hidden; border:1px solid var(--line);}
   .cgpa-fill{height:100%; background:linear-gradient(90deg,var(--green-bright),var(--green)); width:71.4%; border-radius:4px;}
   .cgpa-label{font-family:var(--mono); font-size:12.5px; color:var(--ink-soft); white-space:nowrap;}
- 
+
   /* ---------- CERTS ---------- */
   .cert-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px;}
   .cert-card{
@@ -320,7 +320,7 @@
   .cert-meta{font-family:var(--mono); font-size:11px; color:var(--ink-faint); line-height:1.7; word-break:break-all;}
   .cert-status{display:inline-block; font-family:var(--mono); font-size:10px; text-transform:uppercase; padding:2px 7px; border-radius:9px; margin-left:6px; vertical-align:middle;}
   .cert-status.active{background:var(--green-wash); color:var(--green); border:1px solid #CFE3D6;}
- 
+
   /* ---------- GITHUB STATS ---------- */
   .gh-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
   @media (max-width:800px){ .gh-grid{grid-template-columns:1fr;} }
@@ -332,7 +332,7 @@
   .gh-chart-label{font-family:var(--mono); font-size:12px; color:var(--green); text-transform:lowercase;}
   .gh-chart-label::before{content:'-- '; color:var(--ink-faint);}
   .gh-cta{margin-top:24px; text-align:center;}
- 
+
   /* ---------- TESTIMONIALS ---------- */
   .testi-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;}
   .testi-card{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:22px 24px;}
@@ -340,10 +340,10 @@
   .testi-name{font-weight:600; font-size:14px; color:var(--ink);}
   .testi-role{font-family:var(--mono); font-size:11.5px; color:var(--green); margin-top:2px;}
   .testi-note{font-family:var(--mono); font-size:11.5px; color:var(--ink-faint); margin-top:22px;}
- 
+
   /* ---------- BLOG ---------- */
   .blog-desc{max-width:70ch; color:var(--ink-soft); font-size:16px; margin-bottom:22px;}
- 
+
   /* ---------- CONTACT / FOOTER ---------- */
   footer{
     background:var(--ink); color:var(--paper); padding:80px 0 32px; margin-top:40px;
@@ -367,7 +367,7 @@
 </style>
 </head>
 <body>
- 
+
 <header class="nav">
   <div class="nav-inner">
     <div class="logo"><span class="dot"></span>The Timeless Analyst</div>
@@ -395,9 +395,9 @@
     </div>
   </div>
 </header>
- 
+
 <main>
- 
+
   <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-grid">
@@ -406,12 +406,12 @@
         <h1 class="hero-name">Manas Srivastava</h1>
         <p class="hero-role">Building analytics systems that drive business decisions</p>
         <p class="hero-desc">I help businesses turn messy data into measurable decisions using SQL, Python, and applied AI. From predictive models to automated reporting systems, I build analytics solutions that people actually use.</p>
- 
+
         <div class="query-line" id="queryLine">
           <span class="prompt">sql&gt;</span>
           <span class="typed" id="typedText"></span><span class="cursor"></span>
         </div>
- 
+
         <div class="hero-ctas">
           <a class="btn btn-primary" href="https://github.com/manas0540" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
@@ -427,7 +427,7 @@
           </a>
         </div>
       </div>
- 
+
       <div class="result-panel">
         <div class="rp-head"><span class="rp-dot a"></span><span class="rp-dot b"></span><span class="rp-dot c"></span>&nbsp;&nbsp;query_result.sql</div>
         <table class="rp-table">
@@ -443,7 +443,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- PROFILE -->
   <section id="profile">
     <div class="wrap">
@@ -472,7 +472,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- NOW -->
   <section id="now">
     <div class="wrap">
@@ -493,7 +493,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- SKILLS -->
   <section id="skills">
     <div class="wrap">
@@ -554,13 +554,13 @@
       </div>
     </div>
   </section>
- 
+
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="wrap">
       <p class="eyebrow">experience</p>
       <h2 class="section-title">Work Experience</h2>
- 
+
       <div class="exp-card current">
         <div class="exp-top">
           <div>
@@ -576,7 +576,7 @@
         </ul>
         <div class="chip-row"><span class="chip">Data Analysis</span><span class="chip">Automation Agents</span><span class="chip">Python</span><span class="chip">SQL</span></div>
       </div>
- 
+
       <div class="exp-card">
         <div class="exp-top">
           <div>
@@ -592,7 +592,7 @@
         </ul>
         <div class="chip-row"><span class="chip">Microsoft Excel</span><span class="chip">CRM Reporting</span></div>
       </div>
- 
+
       <div class="exp-card">
         <div class="exp-top">
           <div>
@@ -610,14 +610,14 @@
       </div>
     </div>
   </section>
- 
+
   <!-- PROJECTS -->
   <section id="projects">
     <div class="wrap">
       <p class="eyebrow">projects</p>
       <h2 class="section-title">Projects</h2>
       <div class="proj-grid">
- 
+
         <div class="proj-card">
           <div class="proj-viz">
             <svg viewBox="0 0 300 120" preserveAspectRatio="none">
@@ -647,7 +647,7 @@
             </div>
           </div>
         </div>
- 
+
         <div class="proj-card">
           <div class="proj-viz">
             <svg viewBox="0 0 300 120" preserveAspectRatio="none">
@@ -675,7 +675,7 @@
             </div>
           </div>
         </div>
- 
+
         <div class="proj-card">
           <div class="proj-viz">
             <svg viewBox="0 0 300 120" preserveAspectRatio="none">
@@ -698,7 +698,7 @@
             </div>
           </div>
         </div>
- 
+
         <div class="proj-card">
           <div class="proj-viz">
             <svg viewBox="0 0 300 120" preserveAspectRatio="none">
@@ -721,11 +721,11 @@
             </div>
           </div>
         </div>
- 
+
       </div>
     </div>
   </section>
- 
+
   <!-- EXPERIMENTS -->
   <section id="experiments">
     <div class="wrap">
@@ -748,7 +748,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- ACHIEVEMENTS -->
   <section id="achievements">
     <div class="wrap">
@@ -796,7 +796,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- GITHUB STATS -->
   <section id="github-stats">
     <div class="wrap">
@@ -820,7 +820,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- VOLUNTEERING -->
   <section id="volunteering">
     <div class="wrap">
@@ -836,7 +836,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- EDUCATION -->
   <section id="education">
     <div class="wrap">
@@ -856,7 +856,7 @@
           <span class="cgpa-label">7.14 / 10</span>
         </div>
       </div>
- 
+
       <div class="edu-card">
         <div class="edu-top">
           <div>
@@ -869,14 +869,14 @@
       </div>
     </div>
   </section>
- 
+
   <!-- CERTIFICATIONS -->
   <section id="certifications">
     <div class="wrap">
       <p class="eyebrow">certifications</p>
       <h2 class="section-title">Certifications</h2>
       <div class="cert-grid">
- 
+
         <div class="cert-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
@@ -885,7 +885,7 @@
             <div class="cert-meta">Issued Mar 2026<br>Credential ID: sax47uocp58c</div>
           </div>
         </div>
- 
+
         <div class="cert-card cert-hidden" style="display:none;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
@@ -894,7 +894,7 @@
             <div class="cert-meta">Issued Aug 2024<br>Credential ID: e363ebd6c14514e55991a796fee4f1042d5ec1e295a74a7adfd318fec66f8dad</div>
           </div>
         </div>
- 
+
         <div class="cert-card cert-hidden" style="display:none;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
@@ -903,7 +903,7 @@
             <div class="cert-meta">Issued Nov 2023<br>Credential ID: 6172535</div>
           </div>
         </div>
- 
+
         <div class="cert-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
@@ -912,7 +912,7 @@
             <div class="cert-meta">Completed</div>
           </div>
         </div>
- 
+
         <div class="cert-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
@@ -921,7 +921,7 @@
             <div class="cert-meta">—</div>
           </div>
         </div>
- 
+
         <div class="cert-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
@@ -930,7 +930,7 @@
             <div class="cert-meta">—</div>
           </div>
         </div>
- 
+
         <div class="cert-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
@@ -939,7 +939,7 @@
             <div class="cert-meta">Issued Feb 2026</div>
           </div>
         </div>
- 
+
         <div class="cert-card cert-hidden" style="display:none;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
@@ -948,14 +948,14 @@
             <div class="cert-meta">Issued Feb 2026</div>
           </div>
         </div>
- 
+
       </div>
       <div style="text-align:center; margin-top:20px;">
         <button type="button" id="certToggleBtn" class="btn btn-ghost" style="cursor:pointer; font-family:var(--mono);">View All Certifications</button>
       </div>
     </div>
   </section>
- 
+
   <!-- MENTORS & COLLABORATORS -->
   <section id="testimonials">
     <div class="wrap">
@@ -985,7 +985,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- ONLINE PRESENCE -->
   <section id="blog">
     <div class="wrap">
@@ -1002,9 +1002,9 @@
       </a>
     </div>
   </section>
- 
+
 </main>
- 
+
 <footer id="contact">
   <div class="wrap">
     <p class="eyebrow" style="color:var(--green-bright);">contact</p>
@@ -1033,7 +1033,7 @@
     </div>
   </div>
 </footer>
- 
+
 <script>
   // Typewriter effect for the hero SQL query line — cycles through two queries
   (function(){
@@ -1070,7 +1070,7 @@
     }
     tick();
   })();
- 
+
   // View All Certifications toggle
   (function(){
     var btn = document.getElementById('certToggleBtn');
@@ -1083,883 +1083,7 @@
       btn.textContent = expanded ? 'Show Fewer Certifications' : 'View All Certifications';
     });
   })();
- 
-  (function(){
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduceMotion) return;
-    var targets = document.querySelectorAll('section, footer');
-    targets.forEach(function(t){
-      t.style.opacity = 0;
-      t.style.transform = 'translateY(16px)';
-      t.style.transition = 'opacity .6s ease, transform .6s ease';
-    });
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)';
-          io.unobserve(entry.target);
-        }
-      });
-    }, {threshold:0.08});
-    targets.forEach(function(t){ io.observe(t); });
-  })();
-</script>
- 
-</body>
-</html>
-  body{
-    margin:0;
-    background:var(--paper);
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 48px 48px;
-    background-position: -1px -1px;
-    color:var(--ink);
-    font-family:var(--sans);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
 
-  a{color:inherit;}
-  img{max-width:100%; display:block;}
-
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
-
-  ::selection{background:var(--green); color:var(--paper);}
-
-  /* ---------- NAV ---------- */
-  header.nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(238,241,236,0.86);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{
-    max-width:var(--maxw); margin:0 auto; padding:16px 28px;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-  }
-  .logo{
-    font-family:var(--serif); font-style:italic; font-weight:600; font-size:16px;
-    letter-spacing:0.01em;
-    display:flex; align-items:center; gap:8px; white-space:nowrap;
-  }
-  .logo .dot{width:7px; height:7px; border-radius:50%; background:var(--green-bright); display:inline-block; flex:none;}
-  .nav-links{
-    display:flex; gap:18px; list-style:none; margin:0; padding:0;
-    font-family:var(--mono); font-size:11.5px; letter-spacing:0.03em; text-transform:uppercase;
-  }
-  .nav-links a{text-decoration:none; color:var(--ink-soft); padding-bottom:3px; border-bottom:1px solid transparent; transition:border-color .15s, color .15s;}
-  .nav-links a:hover{color:var(--green); border-color:var(--green-bright);}
-  .nav-social{display:flex; gap:14px; align-items:center;}
-  .nav-social a{display:flex; color:var(--ink); opacity:0.75; transition:opacity .15s, transform .15s;}
-  .nav-social a:hover{opacity:1; transform:translateY(-1px);}
-  .nav-social svg{width:18px; height:18px;}
-
-  @media (max-width:840px){
-    .nav-links{display:none;}
-  }
-
-  /* ---------- SECTION SCAFFOLD ---------- */
-  section{padding:88px 0;}
-  section:first-of-type{padding-top:56px;}
-  .eyebrow{
-    font-family:var(--mono); font-size:12.5px; color:var(--green);
-    text-transform:lowercase; letter-spacing:0.02em; margin:0 0 14px;
-    display:flex; align-items:center; gap:10px;
-  }
-  .eyebrow::before{content:'--'; color:var(--ink-faint);}
-  h2.section-title{
-    font-family:var(--serif); font-weight:600; font-size:clamp(28px,4vw,40px);
-    margin:0 0 40px; letter-spacing:-0.01em;
-  }
-
-  /* ---------- HERO ---------- */
-  .hero{padding-top:64px; padding-bottom:80px;}
-  .hero-grid{
-    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:start;
-  }
-  @media (max-width:880px){ .hero-grid{grid-template-columns:1fr;} }
-
-  .hero-kicker{
-    font-family:var(--mono); font-size:13px; color:var(--ink-soft);
-    letter-spacing:0.04em; text-transform:uppercase; margin-bottom:18px;
-  }
-  h1.hero-name{
-    font-family:var(--serif); font-weight:600; font-size:clamp(42px,7vw,72px);
-    line-height:1.02; margin:0 0 10px; letter-spacing:-0.02em; color:var(--ink);
-  }
-  .hero-role{
-    font-family:var(--serif); font-style:italic; font-weight:500;
-    font-size:clamp(19px,2.4vw,24px); color:var(--green); margin:0 0 26px;
-  }
-  .hero-desc{max-width:52ch; color:var(--ink-soft); font-size:16px; margin-bottom:30px;}
-
-  .query-line{
-    font-family:var(--mono); font-size:14px; background:var(--ink); color:#DCEBDD;
-    padding:14px 18px; border-radius:8px; margin-bottom:30px;
-    display:flex; align-items:center; gap:4px; flex-wrap:wrap;
-    box-shadow:0 12px 28px -14px rgba(20,30,25,0.45);
-  }
-  .query-line .prompt{color:var(--green-bright);}
-  .query-line .typed{white-space:pre;}
-  .cursor{display:inline-block; width:7px; height:16px; background:var(--green-bright); margin-left:2px; animation:blink 1s steps(1) infinite; vertical-align:-3px;}
-  @keyframes blink{0%,49%{opacity:1;}50%,100%{opacity:0;}}
-
-  .hero-ctas{display:flex; gap:12px; flex-wrap:wrap;}
-  .btn{
-    font-family:var(--mono); font-size:13px; text-decoration:none;
-    padding:11px 20px; border-radius:6px; display:inline-flex; align-items:center; gap:8px;
-    transition:transform .15s, box-shadow .15s, background .15s, color .15s;
-    border:1px solid var(--ink);
-  }
-  .btn svg{width:15px; height:15px;}
-  .btn-primary{background:var(--ink); color:var(--paper);}
-  .btn-primary:hover{background:var(--green); border-color:var(--green); transform:translateY(-2px); box-shadow:0 8px 18px -8px rgba(36,96,63,0.55);}
-  .btn-ghost{background:transparent; color:var(--ink);}
-  .btn-ghost:hover{background:var(--panel); transform:translateY(-2px); box-shadow:0 8px 18px -10px rgba(20,30,25,0.25);}
-
-  /* result panel */
-  .result-panel{
-    background:var(--panel); border:1px solid var(--line); border-radius:10px;
-    overflow:hidden; box-shadow:0 20px 44px -28px rgba(20,30,25,0.35);
-  }
-  .result-panel .rp-head{
-    display:flex; align-items:center; gap:8px; padding:12px 16px;
-    border-bottom:1px solid var(--line); background:var(--paper-alt);
-    font-family:var(--mono); font-size:11.5px; color:var(--ink-soft);
-  }
-  .rp-dot{width:8px; height:8px; border-radius:50%; background:var(--line);}
-  .rp-dot.a{background:#D9A05B;} .rp-dot.b{background:#C97A6A;} .rp-dot.c{background:var(--green-bright);}
-  table.rp-table{width:100%; border-collapse:collapse; font-family:var(--mono); font-size:13px;}
-  table.rp-table th{
-    text-align:left; padding:10px 16px; color:var(--ink-faint); font-weight:500;
-    border-bottom:1px solid var(--line); font-size:11px; text-transform:uppercase; letter-spacing:0.04em;
-  }
-  table.rp-table td{padding:11px 16px; border-bottom:1px solid var(--line); color:var(--ink);}
-  table.rp-table tr:last-child td{border-bottom:none;}
-  table.rp-table td.metric{color:var(--green); font-weight:600;}
-  .rp-foot{padding:10px 16px; font-family:var(--mono); font-size:11px; color:var(--ink-faint); background:var(--paper-alt); border-top:1px solid var(--line);}
-
-  /* ---------- PROFILE ---------- */
-  .profile-grid{display:grid; grid-template-columns:200px 1fr; gap:44px; align-items:flex-start;}
-  @media (max-width:700px){ .profile-grid{grid-template-columns:1fr;} }
-  .avatar-frame{
-    border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--panel);
-    box-shadow:0 16px 30px -22px rgba(20,30,25,0.4);
-  }
-  .avatar-frame img{width:100%; aspect-ratio:1/1; object-fit:cover;}
-  .avatar-cap{font-family:var(--mono); font-size:11px; color:var(--ink-faint); padding:10px 12px; border-top:1px solid var(--line);}
-  .profile-text p{color:var(--ink-soft); font-size:16.5px; max-width:66ch;}
-  .profile-text p strong{color:var(--ink); font-weight:600;}
-  .kv-strip{display:flex; flex-wrap:wrap; gap:10px; margin-top:24px;}
-  .kv-chip{
-    font-family:var(--mono); font-size:12px; padding:8px 12px; border-radius:6px;
-    background:var(--green-wash); color:var(--green); border:1px solid #CFE3D6;
-  }
-  .lang-strip{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;}
-  .lang-chip{
-    font-family:var(--mono); font-size:12px; padding:7px 12px; border-radius:6px;
-    background:var(--paper-alt); color:var(--ink-soft); border:1px solid var(--line);
-  }
-  .lang-chip b{color:var(--ink); font-weight:600;}
-
-  /* ---------- SKILLS ---------- */
-  .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden;}
-  .skill-col{background:var(--panel); padding:22px 20px;}
-  .skill-col h3{
-    font-family:var(--mono); font-size:12px; color:var(--green); text-transform:lowercase;
-    margin:0 0 14px; letter-spacing:0.02em;
-  }
-  .skill-col h3::before{content:'-- '; color:var(--ink-faint);}
-  .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
-  .chip{
-    font-family:var(--mono); font-size:12px; padding:6px 10px; border-radius:5px;
-    background:var(--paper-alt); border:1px solid var(--line); color:var(--ink);
-  }
-
-  /* ---------- EXPERIENCE ---------- */
-  .exp-card{
-    background:var(--panel); border:1px solid var(--line); border-radius:10px;
-    padding:26px 28px; margin-bottom:22px;
-  }
-  .exp-card.current{border-color:var(--green-bright); box-shadow:0 0 0 1px var(--green-bright) inset;}
-  .exp-top{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; margin-bottom:6px;}
-  .exp-role{font-family:var(--serif); font-weight:600; font-size:21px; display:flex; align-items:center; gap:10px;}
-  .live-tag{font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.04em; color:var(--green); background:var(--green-wash); border:1px solid #CFE3D6; padding:3px 8px; border-radius:10px;}
-  .exp-meta{font-family:var(--mono); font-size:12px; color:var(--ink-faint); text-align:right;}
-  .exp-company{font-family:var(--mono); font-size:13px; color:var(--green); margin-bottom:16px;}
-  ul.exp-list{margin:0 0 18px; padding-left:20px; color:var(--ink-soft); font-size:15px;}
-  ul.exp-list li{margin-bottom:8px;}
-  ul.exp-list li::marker{color:var(--green-bright);}
-
-  /* ---------- PROJECTS ---------- */
-  .proj-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px;}
-  .proj-card{
-    background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden;
-    display:flex; flex-direction:column; transition:box-shadow .2s, transform .2s;
-  }
-  .proj-card:hover{box-shadow:0 18px 36px -22px rgba(20,30,25,0.4); transform:translateY(-3px);}
-  .proj-viz{padding:22px 22px 0; background:var(--paper-alt);}
-  .proj-viz svg{width:100%; height:auto; display:block;}
-  .proj-body{padding:22px;}
-  .proj-title{font-family:var(--serif); font-weight:600; font-size:19px; margin:0 0 4px;}
-  .proj-stack{font-family:var(--mono); font-size:11.5px; color:var(--ink-faint); margin-bottom:14px;}
-  .proj-body ul{margin:0 0 16px; padding-left:18px; color:var(--ink-soft); font-size:14.5px;}
-  .proj-body ul li{margin-bottom:6px;}
-  .proj-body p.proj-desc{color:var(--ink-soft); font-size:14.5px; margin:0 0 16px;}
-  .proj-links{display:flex; gap:14px; flex-wrap:wrap;}
-  .proj-links a{
-    font-family:var(--mono); font-size:12px; text-decoration:none; color:var(--green);
-    display:flex; align-items:center; gap:6px; border-bottom:1px solid transparent;
-  }
-  .proj-links a:hover{border-color:var(--green);}
-  .proj-links svg{width:14px; height:14px;}
-  .proj-card.mini .proj-body{padding:18px 22px;}
-  .proj-card.mini .proj-title{font-size:16px;}
-
-  /* ---------- ACHIEVEMENTS ---------- */
-  .ach-list{border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--panel);}
-  .ach-row{
-    display:flex; gap:16px; align-items:flex-start; padding:18px 22px;
-    border-bottom:1px solid var(--line); border-left:3px solid transparent;
-    transition:border-color .15s, background .15s;
-  }
-  .ach-row:last-child{border-bottom:none;}
-  .ach-row:hover{border-left-color:var(--green-bright); background:var(--paper-alt);}
-  .ach-icon{color:var(--green); flex:none; margin-top:2px;}
-  .ach-icon svg{width:18px; height:18px;}
-  .ach-text{flex:1;}
-  .ach-text strong{display:block; font-size:15px; margin-bottom:2px;}
-  .ach-text span{color:var(--ink-soft); font-size:13.5px;}
-  .ach-thumb{
-    width:56px; height:56px; object-fit:cover; border-radius:6px;
-    border:1px solid var(--line); flex:none;
-  }
-
-  /* ---------- VOLUNTEERING ---------- */
-  .vol-card{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:24px 28px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;}
-  .vol-role{font-family:var(--serif); font-weight:600; font-size:19px; margin-bottom:4px;}
-  .vol-org{font-family:var(--mono); font-size:13px; color:var(--green); margin-bottom:10px;}
-  .vol-desc{color:var(--ink-soft); font-size:14.5px; max-width:60ch;}
-  .vol-meta{font-family:var(--mono); font-size:12px; color:var(--ink-faint); white-space:nowrap;}
-
-  /* ---------- EDUCATION ---------- */
-  .edu-card{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:26px 28px;}
-  .edu-top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px;}
-  .edu-degree{font-family:var(--serif); font-weight:600; font-size:20px;}
-  .edu-inst{font-family:var(--mono); font-size:13px; color:var(--green); margin-top:4px;}
-  .edu-years{font-family:var(--mono); font-size:12px; color:var(--ink-faint);}
-  .cgpa-row{display:flex; align-items:center; gap:14px;}
-  .cgpa-bar{flex:1; height:8px; border-radius:4px; background:var(--paper-alt); overflow:hidden; border:1px solid var(--line);}
-  .cgpa-fill{height:100%; background:linear-gradient(90deg,var(--green-bright),var(--green)); width:71.4%; border-radius:4px;}
-  .cgpa-label{font-family:var(--mono); font-size:12.5px; color:var(--ink-soft); white-space:nowrap;}
-
-  /* ---------- CERTS ---------- */
-  .cert-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px;}
-  .cert-card{
-    background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px 20px;
-    display:flex; gap:12px; align-items:flex-start;
-  }
-  .cert-card svg{width:17px; height:17px; color:var(--green); flex:none; margin-top:3px;}
-  .cert-name{font-weight:600; font-size:14.5px; margin-bottom:3px;}
-  .cert-issuer{font-family:var(--mono); font-size:12px; color:var(--ink-soft); margin-bottom:6px;}
-  .cert-meta{font-family:var(--mono); font-size:11px; color:var(--ink-faint); line-height:1.7; word-break:break-all;}
-  .cert-status{display:inline-block; font-family:var(--mono); font-size:10px; text-transform:uppercase; padding:2px 7px; border-radius:9px; margin-left:6px; vertical-align:middle;}
-  .cert-status.active{background:var(--green-wash); color:var(--green); border:1px solid #CFE3D6;}
-
-  /* ---------- CONTACT / FOOTER ---------- */
-  footer{
-    background:var(--ink); color:var(--paper); padding:80px 0 32px; margin-top:40px;
-    background-image:linear-gradient(#25342c 1px, transparent 1px), linear-gradient(90deg,#25342c 1px, transparent 1px);
-    background-size:48px 48px;
-  }
-  .foot-cta{font-family:var(--serif); font-weight:600; font-size:clamp(28px,4.4vw,44px); max-width:14ch; margin:0 0 34px; letter-spacing:-0.01em;}
-  .foot-links{display:flex; flex-wrap:wrap; gap:16px; margin-bottom:56px;}
-  .foot-link{
-    font-family:var(--mono); font-size:13px; text-decoration:none; color:var(--paper);
-    display:flex; align-items:center; gap:9px; padding:12px 18px; border:1px solid #3A4B41; border-radius:8px;
-    transition:background .15s, border-color .15s;
-  }
-  .foot-link:hover{background:#1D2B23; border-color:var(--green-bright);}
-  .foot-link svg{width:16px; height:16px;}
-  .foot-bottom{
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
-    border-top:1px solid #2B3A32; padding-top:24px;
-    font-family:var(--mono); font-size:11.5px; color:#8CA093;
-  }
-</style>
-</head>
-<body>
-
-<header class="nav">
-  <div class="nav-inner">
-    <div class="logo"><span class="dot"></span>The Timeless Analyst</div>
-    <ul class="nav-links">
-      <li><a href="#profile">Profile</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-social">
-      <a href="https://github.com/manas0540" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/manas-srivastava-28010125b/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5m0 0c0-1.5 1-2.5 2.5-2.5S17 9.5 17 11v5"/></svg>
-      </a>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="hero-kicker">The Timeless Analyst · Portfolio 2026</div>
-        <h1 class="hero-name">Manas Srivastava</h1>
-        <p class="hero-role">Data Analyst &amp; AI — where data, analytics and intelligence meet</p>
-        <p class="hero-desc">I combine data analysis, analytics engineering, and applied AI to turn raw, messy datasets into decisions — building predictive models, optimizing queries, automating workflows with AI agents, and shipping dashboards people actually use.</p>
-
-        <div class="query-line" id="queryLine">
-          <span class="prompt">sql&gt;</span>
-          <span class="typed" id="typedText"></span><span class="cursor"></span>
-        </div>
-
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://github.com/manas0540" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-            View GitHub
-          </a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/manas-srivastava-28010125b/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5m0 0c0-1.5 1-2.5 2.5-2.5S17 9.5 17 11v5"/></svg>
-            Connect on LinkedIn
-          </a>
-          <a class="btn btn-ghost" href="mailto:srivastavamanas990@gmail.com">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            Email Me
-          </a>
-        </div>
-      </div>
-
-      <div class="result-panel">
-        <div class="rp-head"><span class="rp-dot a"></span><span class="rp-dot b"></span><span class="rp-dot c"></span>&nbsp;&nbsp;query_result.sql</div>
-        <table class="rp-table">
-          <tr><th>field</th><th>value</th></tr>
-          <tr><td>records_analyzed</td><td class="metric">700,000+</td></tr>
-          <tr><td>peak_model_accuracy</td><td class="metric">95%</td></tr>
-          <tr><td>codevita_rank</td><td class="metric">Top 0.9% Global</td></tr>
-          <tr><td>hackathon</td><td>Walmart Sparkathon Awardee</td></tr>
-          <tr><td>program</td><td>McKinsey Forward</td></tr>
-          <tr><td>linkedin_network</td><td class="metric">1.6K+</td></tr>
-        </table>
-        <div class="rp-foot">6 rows returned</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROFILE -->
-  <section id="profile">
-    <div class="wrap">
-      <p class="eyebrow">profile</p>
-      <h2 class="section-title">About</h2>
-      <div class="profile-grid">
-        <div class="avatar-frame">
-          <img src="https://github.com/manas0540.png?size=400" alt="Manas Srivastava" loading="lazy" onerror="this.style.display='none'">
-          <div class="avatar-cap">@manas0540</div>
-        </div>
-        <div class="profile-text">
-          <p>I'm a <strong>Data Analyst &amp; AI</strong> profile — I combine data, analytics, and applied AI to solve real business problems. My work spans <strong>SQL, Python, and Machine Learning</strong>, from exploratory analysis and predictive modeling to business reporting and AI-driven automation that stakeholders can act on.</p>
-          <p>I've analyzed <strong>700,000+ records</strong>, pushed model accuracy as high as <strong>95%</strong>, ranked in the <strong>top 0.9%</strong> among 537,000+ participants at TCS CodeVita, and was selected for the <strong>McKinsey Forward Program</strong>. I hold a completed <strong>B.Tech in Mechanical Engineering</strong> from KNIT Sultanpur, and I've been working as a <strong>freelance Data Analyst</strong> — data analysis and automation agents — since January 2026.</p>
-          <div class="kv-strip">
-            <span class="kv-chip">Open to Analytics roles</span>
-            <span class="kv-chip">B.Tech Graduate · 2022–2026</span>
-            <span class="kv-chip">Freelancing since Jan 2026</span>
-            <span class="kv-chip">1.6K+ LinkedIn network</span>
-          </div>
-          <div class="lang-strip">
-            <span class="lang-chip"><b>English</b> — Fluent</span>
-            <span class="lang-chip"><b>Hindi</b> — Native</span>
-            <span class="lang-chip"><b>Japanese</b> — Learning</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="wrap">
-      <p class="eyebrow">skills</p>
-      <h2 class="section-title">Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-col">
-          <h3>tools</h3>
-          <div class="chip-row">
-            <span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Pandas</span>
-            <span class="chip">Scikit-learn</span><span class="chip">Excel (Pivot, VLOOKUP, XLOOKUP)</span>
-            <span class="chip">Databricks</span><span class="chip">OOPs (Object-Oriented Programming)</span>
-          </div>
-        </div>
-        <div class="skill-col">
-          <h3>cloud &amp; devops</h3>
-          <div class="chip-row">
-            <span class="chip">AWS</span><span class="chip">CI/CD Pipelines</span><span class="chip">AWS Cloud Practitioner (Certified)</span>
-          </div>
-        </div>
-        <div class="skill-col">
-          <h3>analytics</h3>
-          <div class="chip-row">
-            <span class="chip">Exploratory Data Analysis</span><span class="chip">KPI Reporting</span>
-            <span class="chip">Query Optimization</span><span class="chip">Statistical Analysis</span>
-            <span class="chip">Data Cleaning &amp; Wrangling</span><span class="chip">ETL Pipelines</span>
-            <span class="chip">Data Storytelling</span><span class="chip">Business Intelligence (BI)</span>
-            <span class="chip">Dashboard Design</span>
-          </div>
-        </div>
-        <div class="skill-col">
-          <h3>statistics</h3>
-          <div class="chip-row">
-            <span class="chip">A/B Testing</span><span class="chip">Regression Analysis</span>
-            <span class="chip">Time Series Analysis</span>
-          </div>
-        </div>
-        <div class="skill-col">
-          <h3>ml &amp; ai</h3>
-          <div class="chip-row">
-            <span class="chip">Supervised Learning</span><span class="chip">Unsupervised Learning</span>
-            <span class="chip">Ensemble Methods</span><span class="chip">Feature Engineering</span>
-            <span class="chip">Artificial Neural Networks (ANN)</span><span class="chip">AI Agents &amp; Automation</span>
-          </div>
-        </div>
-        <div class="skill-col">
-          <h3>visualisation</h3>
-          <div class="chip-row">
-            <span class="chip">Power BI</span><span class="chip">Matplotlib</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="wrap">
-      <p class="eyebrow">experience</p>
-      <h2 class="section-title">Work Experience</h2>
-
-      <div class="exp-card current">
-        <div class="exp-top">
-          <div>
-            <div class="exp-role">Freelance Data Analyst <span class="live-tag">current</span></div>
-          </div>
-          <div class="exp-meta">Jan 2026 – Present<br>Remote / Independent</div>
-        </div>
-        <div class="exp-company">Self-Employed</div>
-        <ul class="exp-list">
-          <li>Delivering freelance data analysis engagements for clients — from data cleaning and exploratory analysis to reporting and dashboarding.</li>
-          <li>Designing and building AI-powered automation agents that streamline repetitive analytics and reporting workflows.</li>
-          <li>Managing end-to-end client work independently: scoping, analysis, delivery, and iteration based on feedback.</li>
-        </ul>
-        <div class="chip-row"><span class="chip">Data Analysis</span><span class="chip">Automation Agents</span><span class="chip">Python</span><span class="chip">SQL</span></div>
-      </div>
-
-      <div class="exp-card">
-        <div class="exp-top">
-          <div>
-            <div class="exp-role">Business Strategy Intern</div>
-          </div>
-          <div class="exp-meta">Jul 2025 – Sep 2025<br>Founder's Office, USA (Remote)</div>
-        </div>
-        <div class="exp-company">DefineCareer</div>
-        <ul class="exp-list">
-          <li>Built and maintained an Excel-based tracker for 500+ TPO contacts, improving outreach tracking and registration pipeline visibility.</li>
-          <li>Standardized institution records and tracked outreach activities, improving data accuracy and institutional engagement monitoring.</li>
-          <li>Recommended a resume review initiative to strengthen the programme's value proposition and support student career development.</li>
-        </ul>
-        <div class="chip-row"><span class="chip">Microsoft Excel</span><span class="chip">CRM Reporting</span></div>
-      </div>
-
-      <div class="exp-card">
-        <div class="exp-top">
-          <div>
-            <div class="exp-role">Data Analyst Intern</div>
-          </div>
-          <div class="exp-meta">Feb 2025 – May 2025<br>Remote</div>
-        </div>
-        <div class="exp-company">Infosys Springboard</div>
-        <ul class="exp-list">
-          <li>Developed predictive models for customer churn and sales analysis using regression and ensemble techniques, achieving 86.70% and 83.6% accuracy respectively.</li>
-          <li>Performed data preprocessing by handling 15% missing values through imputation and feature engineering, improving dataset reliability by 7%.</li>
-          <li>Supported data validation, cleaning, and preparation workflows, ensuring analysis-ready datasets for model development and evaluation.</li>
-        </ul>
-        <div class="chip-row"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Scikit-learn</span><span class="chip">Machine Learning</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="wrap">
-      <p class="eyebrow">projects</p>
-      <h2 class="section-title">Projects</h2>
-      <div class="proj-grid">
-
-        <div class="proj-card">
-          <div class="proj-viz">
-            <svg viewBox="0 0 300 120" preserveAspectRatio="none">
-              <rect x="10" y="60" width="22" height="50" fill="#3E8F63"/>
-              <rect x="42" y="40" width="22" height="70" fill="#24603F"/>
-              <rect x="74" y="70" width="22" height="40" fill="#3E8F63"/>
-              <rect x="106" y="20" width="22" height="90" fill="#24603F"/>
-              <rect x="138" y="50" width="22" height="60" fill="#3E8F63"/>
-              <rect x="170" y="30" width="22" height="80" fill="#24603F"/>
-              <rect x="202" y="55" width="22" height="55" fill="#3E8F63"/>
-              <rect x="234" y="10" width="22" height="100" fill="#24603F"/>
-              <rect x="266" y="45" width="22" height="65" fill="#3E8F63"/>
-              <line x1="0" y1="112" x2="300" y2="112" stroke="#D2DBD0" stroke-width="1"/>
-            </svg>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title">Job Market Analysis Dashboard</div>
-            <div class="proj-stack">SQL · Power BI</div>
-            <ul>
-              <li>Analyzed 700K+ job postings using SQL (CTEs, joins, window functions) to uncover hiring trends, in-demand skills, and regional employment patterns.</li>
-              <li>Wrote reusable SQL scripts to automate data preparation, cutting manual analysis time by 30%.</li>
-              <li>Built an interactive Power BI dashboard visualizing salary distributions, hiring hotspots, and skill demand trends.</li>
-            </ul>
-            <div class="proj-links">
-              <a href="https://github.com/manas0540" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-                Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="proj-card">
-          <div class="proj-viz">
-            <svg viewBox="0 0 300 120" preserveAspectRatio="none">
-              <circle cx="30" cy="90" r="4" fill="#24603F"/><circle cx="55" cy="70" r="4" fill="#3E8F63"/>
-              <circle cx="80" cy="80" r="4" fill="#24603F"/><circle cx="105" cy="55" r="4" fill="#3E8F63"/>
-              <circle cx="130" cy="60" r="4" fill="#24603F"/><circle cx="155" cy="40" r="4" fill="#3E8F63"/>
-              <circle cx="180" cy="45" r="4" fill="#24603F"/><circle cx="205" cy="25" r="4" fill="#3E8F63"/>
-              <circle cx="230" cy="35" r="4" fill="#24603F"/><circle cx="255" cy="15" r="4" fill="#3E8F63"/>
-              <circle cx="275" cy="22" r="4" fill="#24603F"/>
-              <path d="M20 95 Q150 70 285 15" fill="none" stroke="#B5652E" stroke-width="1.5" stroke-dasharray="4 3"/>
-              <line x1="0" y1="112" x2="300" y2="112" stroke="#D2DBD0" stroke-width="1"/>
-            </svg>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title">Tribological Behaviour Prediction &amp; Optimization</div>
-            <div class="proj-stack">Python · Scikit-learn · Pandas</div>
-            <ul>
-              <li>Built an ML framework to predict Wear Rate and Coefficient of Friction (COF) of Cu–Gr–TiC composites, reducing dependence on costly lab experiments.</li>
-              <li>Compared ANN, Random Forest, SVR, and KNN models — achieving up to R² = 0.96 (COF) and R² = 0.89 (Wear Rate).</li>
-              <li>Identified Applied Load as the most influential parameter; optimized conditions to 30N load, 8000m distance, 4.5 wt.% TiC.</li>
-            </ul>
-            <div class="proj-links">
-              <a href="https://github.com/manas0540" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-                Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="proj-card">
-          <div class="proj-viz">
-            <svg viewBox="0 0 300 120" preserveAspectRatio="none">
-              <path d="M20 100 L60 60 L100 85 L140 40 L180 65 L220 20 L260 50 L285 15" fill="none" stroke="#24603F" stroke-width="2.5"/>
-              <path d="M20 100 L60 60 L100 85 L140 40 L180 65 L220 20 L260 50 L285 15 L285 112 L20 112 Z" fill="#3E8F63" opacity="0.15"/>
-              <line x1="0" y1="112" x2="300" y2="112" stroke="#D2DBD0" stroke-width="1"/>
-            </svg>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title">SaaS Sales &amp; Churn Prediction</div>
-            <div class="proj-stack">Python · Scikit-learn · Jupyter Notebook</div>
-            <ul>
-              <li>Built an end-to-end ML pipeline on 13,000+ SaaS subscription records, cleaning data with 5%+ missing values into a modeling-ready dataset.</li>
-              <li>Engineered 10+ business features and ran 20+ exploratory visualizations to analyze churn, revenue, and usage patterns.</li>
-              <li>Trained and evaluated Linear Regression and Decision Tree Regressor models (R², MAE, MSE, RMSE) to forecast subscription duration and revenue, automating ~90% of manual analysis steps.</li>
-            </ul>
-            <div class="proj-links">
-              <a href="https://github.com/manas0540/-SaaS-Sales-and-Churn-Prediction-" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-                Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="proj-card">
-          <div class="proj-viz">
-            <svg viewBox="0 0 300 120" preserveAspectRatio="none">
-              <path d="M150 25c-30 0-45 20-45 42 0 26 25 40 45 53 20-13 45-27 45-53 0-22-15-42-45-42z" fill="none" stroke="#24603F" stroke-width="3"/>
-              <path d="M110 62h18l10-18 12 30 10-16h30" fill="none" stroke="#3E8F63" stroke-width="2.5"/>
-              <line x1="0" y1="112" x2="300" y2="112" stroke="#D2DBD0" stroke-width="1"/>
-            </svg>
-          </div>
-          <div class="proj-body">
-            <div class="proj-title">Smart Digital Wellness — Mental Health Guidance Platform</div>
-            <div class="proj-stack">Python · Jupyter Notebook · EDA</div>
-            <ul>
-              <li>Analyzed a mental-health and wellbeing dataset to explore patterns behind emotional and psychological indicators.</li>
-              <li>Prototyped a smart digital wellness concept designed to offer instant, personalized mental-health guidance and support.</li>
-              <li>Applied data cleaning and exploratory analysis to surface actionable, data-backed wellbeing insights.</li>
-            </ul>
-            <div class="proj-links">
-              <a href="https://github.com/manas0540/Smart-Digital-Wellness-Immediate-Mental-Health-Guidance-Platform" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-                Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="proj-card mini">
-          <div class="proj-body">
-            <div class="proj-title">Random Jokes</div>
-            <div class="proj-stack">Just for fun</div>
-            <p class="proj-desc">A small, lighthearted project that serves a random joke from a curated collection on each run — built to experiment with content randomization logic.</p>
-            <div class="proj-links">
-              <a href="https://github.com/manas0540/Random-Joke-s-" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-                Repository
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ACHIEVEMENTS -->
-  <section id="achievements">
-    <div class="wrap">
-      <p class="eyebrow">achievements</p>
-      <h2 class="section-title">Achievements</h2>
-      <div class="ach-list">
-        <div class="ach-row">
-          <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4a1 1 0 0 0-1 1c0 2.5 1.8 4.5 4 4.9M17 6h3a1 1 0 0 1 1 1c0 2.5-1.8 4.5-4 4.9"/></svg></div>
-          <div class="ach-text"><strong>McKinsey &amp; Company Forward Program</strong><span>Selected trainee — 8-week business analytics &amp; leadership program.</span></div>
-        </div>
-        <div class="ach-row">
-          <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 2 2.9 6 6.6.9-4.8 4.6 1.1 6.5L12 17l-5.8 3 1.1-6.5-4.8-4.6 6.6-.9Z"/></svg></div>
-          <div class="ach-text"><strong>TCS CodeVita Season 12 — Global Rank 4,500</strong><span>Top 0.9% among 537,000+ participants.</span></div>
-        </div>
-        <div class="ach-row">
-          <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h18v13H3z"/><path d="M8 21h8M12 16v5"/></svg></div>
-          <div class="ach-text"><strong>Walmart Sparkathon — Awardee</strong><span>Recognized at Walmart's flagship innovation hackathon.</span></div>
-        </div>
-        <div class="ach-row">
-          <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/></svg></div>
-          <div class="ach-text"><strong>Smart India Hackathon (SIH) 2023–24</strong><span>Pitched an idea and successfully cleared the college-level round.</span></div>
-          <img class="ach-thumb" src="assets/images/sih.jpg" alt="SIH 2023-24" onerror="this.remove()">
-        </div>
-        <div class="ach-row">
-          <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <div class="ach-text"><strong>Aspire Leadership Program</strong><span>Selected participant — leadership and professional development program.</span></div>
-        </div>
-        <div class="ach-row">
-          <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12h6M12 9v6"/></svg></div>
-          <div class="ach-text"><strong>Finalist — NSUT Datasphere Challenge</strong><span>Competitive data analytics challenge.</span></div>
-        </div>
-        <div class="ach-row">
-          <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
-          <div class="ach-text"><strong>Genius Science Olympiad — Cleared, Class 12 (Physics)</strong><span>Certificate of clearance in Physics.</span></div>
-          <img class="ach-thumb" src="assets/images/genius-olympiad-certificate.jpg" alt="Genius Science Olympiad Certificate" onerror="this.remove()">
-        </div>
-        <div class="ach-row">
-          <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg></div>
-          <div class="ach-text"><strong>5-Star SQL Badge</strong><span>HackerRank.</span></div>
-        </div>
-        <div class="ach-row">
-          <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
-          <div class="ach-text"><strong>82 / 100 — Newton School Data Analyst Skill Assessment</strong><span>Benchmark score: 75+.</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VOLUNTEERING -->
-  <section id="volunteering">
-    <div class="wrap">
-      <p class="eyebrow">volunteering</p>
-      <h2 class="section-title">Volunteering &amp; Leadership</h2>
-      <div class="vol-card">
-        <div>
-          <div class="vol-role">Social Media Executive</div>
-          <div class="vol-org">Koshish Educational &amp; Welfare Society</div>
-          <div class="vol-desc">Managing social media presence and outreach content for the society's educational and welfare initiatives.</div>
-        </div>
-        <div class="vol-meta">3+ years · Ongoing</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education">
-    <div class="wrap">
-      <p class="eyebrow">education</p>
-      <h2 class="section-title">Education</h2>
-      <div class="edu-card">
-        <div class="edu-top">
-          <div>
-            <div class="edu-degree">Bachelor of Technology, Mechanical Engineering</div>
-            <div class="edu-inst">Kamla Nehru Institute of Technology (KNIT), Sultanpur</div>
-          </div>
-          <div class="edu-years">2022 – 2026 · Completed</div>
-        </div>
-        <div class="cgpa-row">
-          <span class="cgpa-label">CGPA</span>
-          <div class="cgpa-bar"><div class="cgpa-fill"></div></div>
-          <span class="cgpa-label">7.14 / 10</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CERTIFICATIONS -->
-  <section id="certifications">
-    <div class="wrap">
-      <p class="eyebrow">certifications</p>
-      <h2 class="section-title">Certifications</h2>
-      <div class="cert-grid">
-
-        <div class="cert-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
-          <div>
-            <div class="cert-name">AI Fluency Framework &amp; Foundations <span class="cert-status active">active</span></div>
-            <div class="cert-issuer">Anthropic</div>
-            <div class="cert-meta">Issued Mar 2026<br>Credential ID: sax47uocp58c</div>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
-          <div>
-            <div class="cert-name">Certified Generative AI Tools Expert <span class="cert-status active">active</span></div>
-            <div class="cert-issuer">National Association of State Boards of Accountancy (NASBA) — via LinkedIn</div>
-            <div class="cert-meta">Issued Aug 2024<br>Credential ID: e363ebd6c14514e55991a796fee4f1042d5ec1e295a74a7adfd318fec66f8dad</div>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
-          <div>
-            <div class="cert-name">Infrastructure and Application Modernization with Google Cloud <span class="cert-status active">active</span></div>
-            <div class="cert-issuer">Google Cloud Community India</div>
-            <div class="cert-meta">Issued Nov 2023<br>Credential ID: 6172535</div>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
-          <div>
-            <div class="cert-name">AWS Cloud Practitioner Essentials <span class="cert-status active">active</span></div>
-            <div class="cert-issuer">AWS Academy</div>
-            <div class="cert-meta">Completed</div>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
-          <div>
-            <div class="cert-name">Google Analytics Certification <span class="cert-status active">active</span></div>
-            <div class="cert-issuer">Google</div>
-            <div class="cert-meta">—</div>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
-          <div>
-            <div class="cert-name">Career Essentials in Data Analysis <span class="cert-status active">active</span></div>
-            <div class="cert-issuer">LinkedIn Learning</div>
-            <div class="cert-meta">—</div>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
-          <div>
-            <div class="cert-name">Product Design and Manufacturing <span class="cert-status active">active</span></div>
-            <div class="cert-issuer">NPTEL</div>
-            <div class="cert-meta">Issued Feb 2026</div>
-          </div>
-        </div>
-
-        <div class="cert-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
-          <div>
-            <div class="cert-name">Computer Integrated Manufacturing <span class="cert-status active">active</span></div>
-            <div class="cert-issuer">NPTEL</div>
-            <div class="cert-meta">Issued Feb 2026</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer id="contact">
-  <div class="wrap">
-    <p class="eyebrow" style="color:var(--green-bright);">contact</p>
-    <h2 class="foot-cta">Let's turn your data into decisions.</h2>
-    <div class="foot-links">
-      <a class="foot-link" href="mailto:srivastavamanas990@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-        srivastavamanas990@gmail.com
-      </a>
-      <a class="foot-link" href="tel:+916392617264">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.7 2Z"/></svg>
-        +91-6392617264
-      </a>
-      <a class="foot-link" href="https://github.com/manas0540" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-        github.com/manas0540
-      </a>
-      <a class="foot-link" href="https://www.linkedin.com/in/manas-srivastava-28010125b/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5m0 0c0-1.5 1-2.5 2.5-2.5S17 9.5 17 11v5"/></svg>
-        linkedin.com/in/manas-srivastava · 1.6K+ network
-      </a>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Manas Srivastava — The Timeless Analyst.</span>
-      <span>Last updated: July 2026</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // Typewriter effect for the hero SQL query line
-  (function(){
-    var text = "SELECT * FROM manas_srivastava WHERE role IN ('data_analyst','ai');";
-    var el = document.getElementById('typedText');
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduceMotion){ el.textContent = text; return; }
-    var i = 0;
-    function type(){
-      if(i <= text.length){
-        el.textContent = text.slice(0, i);
-        i++;
-        setTimeout(type, 26);
-      }
-    }
-    type();
-  })();
-
-  // Reveal-on-scroll for sections
   (function(){
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(reduceMotion) return;
