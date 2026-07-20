@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Manas Srivastava — The Timeless Analyst</title>
+<title>Manas Srivastava — Portfolio</title>
 <meta name="description" content="Portfolio of Manas Srivastava — Data Analyst building analytics systems that drive business decisions. SQL, Python, Machine Learning, AWS." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,9 +70,15 @@
   .logo{
     font-family:var(--serif); font-style:italic; font-weight:600; font-size:16px;
     letter-spacing:0.01em;
-    display:flex; align-items:center; gap:8px; white-space:nowrap;
+    display:flex; align-items:center; gap:10px; white-space:nowrap;
   }
   .logo .dot{width:7px; height:7px; border-radius:50%; background:var(--green-bright); display:inline-block; flex:none;}
+  .logo-mark{width:30px; height:30px; border-radius:50%; object-fit:cover; flex:none; border:1px solid var(--line);}
+  .logo-text{display:flex; flex-direction:column; line-height:1.2;}
+  .logo-tag{
+    font-family:var(--mono); font-style:normal; font-size:8.5px; color:var(--ink-faint);
+    letter-spacing:0.06em; text-transform:uppercase; margin-top:1px;
+  }
   .nav-links{
     display:flex; gap:14px; list-style:none; margin:0; padding:0;
     font-family:var(--mono); font-size:11px; letter-spacing:0.03em; text-transform:uppercase;
@@ -176,7 +182,7 @@
     border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--panel);
     box-shadow:0 16px 30px -22px rgba(20,30,25,0.4);
   }
-  .avatar-frame img{width:100%; aspect-ratio:1/1; object-fit:cover;}
+  .avatar-frame img{width:100%; aspect-ratio:1/1; object-fit:cover; object-position:top center;}
   .avatar-cap{font-family:var(--mono); font-size:11px; color:var(--ink-faint); padding:10px 12px; border-top:1px solid var(--line);}
   .profile-text p{color:var(--ink-soft); font-size:16.5px; max-width:66ch;}
   .profile-text p strong{color:var(--ink); font-weight:600;}
@@ -370,7 +376,10 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <div class="logo"><span class="dot"></span>The Timeless Analyst</div>
+    <div class="logo">
+      <img class="logo-mark" src="assets/images/logo-ta.png" alt="Personal logo mark" onerror="this.remove()">
+      <span>Manas Srivastava</span>
+    </div>
     <ul class="nav-links">
       <li><a href="#profile">Profile</a></li>
       <li><a href="#now">Now</a></li>
@@ -379,6 +388,7 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experiments">Experiments</a></li>
       <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#media">Media</a></li>
       <li><a href="#github-stats">GitHub</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#testimonials">Mentors</a></li>
@@ -402,10 +412,10 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="hero-kicker">The Timeless Analyst · Portfolio 2026</div>
+        <div class="hero-kicker">Portfolio · 2026</div>
         <h1 class="hero-name">Manas Srivastava</h1>
         <p class="hero-role">Building analytics systems that drive business decisions</p>
-        <p class="hero-desc">I help businesses turn messy data into measurable decisions using SQL, Python, and applied AI. From predictive models to automated reporting systems, I build analytics solutions that people actually use.</p>
+        <p class="hero-desc">Good analysis doesn't stop at a dashboard — it changes decisions. I build the SQL, Python, and AI systems that make sure it does.</p>
 
         <div class="query-line" id="queryLine">
           <span class="prompt">sql&gt;</span>
@@ -451,14 +461,14 @@
       <h2 class="section-title">About</h2>
       <div class="profile-grid">
         <div class="avatar-frame">
-          <img src="https://github.com/manas0540.png?size=400" alt="Manas Srivastava" loading="lazy" onerror="this.style.display='none'">
+          <img src="assets/images/profile.jpg" alt="Manas Srivastava" loading="lazy" onerror="this.style.display='none'">
           <div class="avatar-cap">@manas0540</div>
         </div>
         <div class="profile-text">
           <p>I'm a <strong>Data Analyst</strong> specializing in analytics engineering and applied AI — I combine data, analytics, and machine learning to solve real business problems. My work spans <strong>SQL, Python, and Machine Learning</strong>, from exploratory analysis and predictive modeling to business reporting and AI-powered analytics automation that stakeholders can act on.</p>
-          <p>I've analyzed <strong>700,000+ records</strong>, pushed model accuracy as high as <strong>95%</strong>, ranked in the <strong>top 0.9%</strong> among 537,000+ participants at TCS CodeVita, and was selected for the <strong>McKinsey Forward Program</strong>. I hold a Degree in  <strong>Engineering</strong> from KNIT Sultanpur, and I've been working as a <strong>freelance Data Analyst</strong> — building AI-powered analytics automation — since January 2026.</p>
+          <p>I've analyzed <strong>700,000+ records</strong>, pushed model accuracy as high as <strong>95%</strong>, ranked in the <strong>top 0.9%</strong> among 537,000+ participants at TCS CodeVita, and was selected for the <strong>McKinsey Forward Program</strong>. I hold a completed <strong>Engineering</strong> from KNIT Sultanpur, and I've been working as a <strong>freelance Data Analyst</strong> — building AI-powered analytics automation — since January 2026.</p>
           <div class="kv-strip">
-            <span class="kv-chip">Open to Analytics roles</span>
+            <span class="kv-chip">Open to Roles</span>
             <span class="kv-chip">B.Tech Graduate · 2022–2026</span>
             <span class="kv-chip">Freelancing since Jan 2026</span>
             <span class="kv-chip">1.6K+ LinkedIn network</span>
@@ -799,6 +809,26 @@
     </div>
   </section>
 
+  <!-- MEDIA & WORKSHOPS -->
+  <section id="media">
+    <div class="wrap">
+      <p class="eyebrow">media &amp; workshops</p>
+      <h2 class="section-title">Media &amp; Workshops</h2>
+      <div class="ach-list">
+        <div class="ach-row">
+          <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg></div>
+          <div class="ach-text"><strong>Guest Speaker — Digital Fraud, e-KYC &amp; Digital Literacy Awareness Camp</strong><span>KNIT Sultanpur × Punjab National Bank, under the UP Govt.'s "Sewa Bhi, Sanskar Bhi Aur Samman Bhi" campaign — covered in <em>Aaj</em>, Lucknow (16 Jun 2026).</span></div>
+          <img class="ach-thumb" src="assets/images/digital-fraud-awareness-clipping.jpg" alt="Newspaper coverage of the Digital Fraud Awareness Camp, Aaj Lucknow" onerror="this.remove()">
+        </div>
+        <div class="ach-row">
+          <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg></div>
+          <div class="ach-text"><strong>Attended — SERB-Sponsored Workshop on Carbon Utilization for NET-ZERO Vision</strong><span>"Carbon Utilization and Other Needed Technologies for NET-ZERO Vision of Atmanirbhar Bharat" · RGIPT, Jais, Amethi · Oct 2024.</span></div>
+          <img class="ach-thumb" src="assets/images/rgipt-net-zero-workshop.jpg" alt="RGIPT NET-ZERO workshop programme details" onerror="this.remove()">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- GITHUB STATS -->
   <section id="github-stats">
     <div class="wrap">
@@ -996,7 +1026,7 @@
     <div class="wrap">
       <p class="eyebrow">online presence</p>
       <h2 class="section-title">The Timeless Analyst</h2>
-      <p class="blog-desc">This is my personal brand — where I build in public across Substack, X, and YouTube, sharing the projects I'm working on, what I'm learning, and what I already know.</p>
+      <p class="blog-desc">My personal brand, built in public across Substack, X, and YouTube — projects, learnings, and work in progress.</p>
       <div class="chip-row" style="margin-bottom:26px;">
         <span class="chip">AI</span><span class="chip">Product Analytics</span><span class="chip">A/B Testing</span>
         <span class="chip">Root Cause Analysis</span><span class="chip">Case Studies</span><span class="chip">Data Storytelling</span>
@@ -1033,7 +1063,7 @@
       </a>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Manas Srivastava — The Timeless Analyst.</span>
+      <span>© 2026 Manas Srivastava. All rights reserved.</span>
       <span>Last updated: July 2026</span>
     </div>
   </div>
