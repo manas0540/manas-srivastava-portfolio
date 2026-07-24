@@ -105,7 +105,11 @@
   .eyebrow::before{content:'--'; color:var(--ink-faint);}
   h2.section-title{
     font-family:var(--serif); font-weight:600; font-size:clamp(28px,4vw,40px);
-    margin:0 0 40px; letter-spacing:-0.01em;
+    margin:0 0 40px; letter-spacing:-0.01em; position:relative; padding-left:18px;
+  }
+  h2.section-title::before{
+    content:''; position:absolute; left:0; top:0.22em; bottom:0.22em; width:3px;
+    background:linear-gradient(180deg,var(--green-bright),var(--rust)); border-radius:2px;
   }
 
   /* ---------- HERO ---------- */
@@ -132,13 +136,32 @@
   .query-line{
     font-family:var(--mono); font-size:14px; background:var(--ink); color:#DCEBDD;
     padding:14px 18px; border-radius:8px; margin-bottom:30px;
-    display:flex; align-items:center; gap:4px; flex-wrap:wrap;
+    display:flex; align-items:center; gap:8px; flex-wrap:wrap;
     box-shadow:0 12px 28px -14px rgba(20,30,25,0.45);
+    position:relative; overflow:hidden;
   }
-  .query-line .prompt{color:var(--green-bright);}
-  .query-line .typed{white-space:pre;}
-  .cursor{display:inline-block; width:7px; height:16px; background:var(--green-bright); margin-left:2px; animation:blink 1s steps(1) infinite; vertical-align:-3px;}
-  @keyframes blink{0%,49%{opacity:1;}50%,100%{opacity:0;}}
+  .query-line::before{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(100deg, transparent 30%, rgba(62,143,99,0.16) 50%, transparent 70%);
+    background-size:200% 100%; animation:sheen 3.2s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes sheen{0%{background-position:160% 0;}100%{background-position:-60% 0;}}
+  .query-line .prompt{
+    background:linear-gradient(90deg,var(--green-bright),#7FD9A6,var(--rust),var(--green-bright));
+    background-size:300% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:gradientshift 4s linear infinite; font-weight:600; flex:none;
+  }
+  @keyframes gradientshift{0%{background-position:0% center;}100%{background-position:300% center;}}
+  .query-line .typed{white-space:pre; position:relative; z-index:1;}
+  .gen-dot{width:5px; height:5px; border-radius:50%; background:var(--green-bright); display:inline-block; opacity:0.3;}
+  .gen-dots{display:none; align-items:center; gap:4px; margin-left:2px;}
+  .gen-dots.on{display:inline-flex;}
+  .gen-dots .gen-dot:nth-child(1){animation:dotpulse 1s ease-in-out infinite;}
+  .gen-dots .gen-dot:nth-child(2){animation:dotpulse 1s ease-in-out .15s infinite;}
+  .gen-dots .gen-dot:nth-child(3){animation:dotpulse 1s ease-in-out .3s infinite;}
+  @keyframes dotpulse{0%,60%,100%{opacity:0.25; transform:scale(0.85);}30%{opacity:1; transform:scale(1);}}
+  .cursor{display:inline-block; width:7px; height:16px; background:var(--green-bright); margin-left:2px; opacity:0.85; vertical-align:-3px; border-radius:1px;}
 
   .hero-ctas{display:flex; gap:12px; flex-wrap:wrap;}
   .btn{
@@ -205,12 +228,7 @@
   }
   .now-pulse{
     width:10px; height:10px; border-radius:50%; background:var(--green-bright); flex:none;
-    box-shadow:0 0 0 0 rgba(62,143,99,0.6); animation:nowpulse 2s infinite;
-  }
-  @keyframes nowpulse{
-    0%{box-shadow:0 0 0 0 rgba(62,143,99,0.5);}
-    70%{box-shadow:0 0 0 10px rgba(62,143,99,0);}
-    100%{box-shadow:0 0 0 0 rgba(62,143,99,0);}
+    box-shadow:0 0 0 4px rgba(62,143,99,0.18);
   }
   .now-label{font-family:var(--mono); font-size:12px; color:var(--ink-soft); white-space:nowrap;}
   .now-chips{display:flex; flex-wrap:wrap; gap:8px;}
@@ -251,8 +269,12 @@
     display:flex; flex-direction:column; transition:box-shadow .2s, transform .2s;
   }
   .proj-card:hover{box-shadow:0 18px 36px -22px rgba(20,30,25,0.4); transform:translateY(-3px);}
-  .proj-viz{padding:22px 22px 0; background:var(--paper-alt);}
+  .proj-viz{padding:22px 22px 0; background:var(--paper-alt); position:relative;}
   .proj-viz svg{width:100%; height:auto; display:block;}
+  .proj-shot{
+    width:100%; aspect-ratio:300/120; object-fit:cover; display:block;
+    border-radius:6px 6px 0 0; margin:-22px -22px 0;
+  }
   .proj-body{padding:22px;}
   .proj-title{font-family:var(--serif); font-weight:600; font-size:19px; margin:0 0 4px;}
   .proj-stack{font-family:var(--mono); font-size:11.5px; color:var(--ink-faint); margin-bottom:14px;}
@@ -290,8 +312,18 @@
   .ach-text strong{display:block; font-size:15px; margin-bottom:2px;}
   .ach-text span{color:var(--ink-soft); font-size:13.5px;}
   .ach-thumb{
-    width:56px; height:56px; object-fit:cover; border-radius:6px;
+    width:96px; height:96px; object-fit:cover; border-radius:8px;
     border:1px solid var(--line); flex:none;
+    box-shadow:0 8px 18px -12px rgba(20,30,25,0.35);
+  }
+  /* Media & Workshops get a larger, more prominent image treatment */
+  #media .ach-row{align-items:center;}
+  #media .ach-thumb{
+    width:220px; height:150px; border-radius:10px;
+  }
+  @media (max-width:640px){
+    #media .ach-row{flex-direction:column; align-items:stretch;}
+    #media .ach-thumb{width:100%; height:auto; aspect-ratio:16/10;}
   }
 
   /* ---------- VOLUNTEERING ---------- */
@@ -321,6 +353,7 @@
     display:flex; gap:12px; align-items:flex-start;
   }
   .cert-card svg{width:17px; height:17px; color:var(--green); flex:none; margin-top:3px;}
+  .cert-logo{width:38px; height:38px; object-fit:contain; border-radius:6px; flex:none; border:1px solid var(--line); background:var(--paper-alt); padding:4px;}
   .cert-name{font-weight:600; font-size:14.5px; margin-bottom:3px;}
   .cert-issuer{font-family:var(--mono); font-size:12px; color:var(--ink-soft); margin-bottom:6px;}
   .cert-meta{font-family:var(--mono); font-size:11px; color:var(--ink-faint); line-height:1.7; word-break:break-all;}
@@ -339,6 +372,34 @@
   .gh-chart-label::before{content:'-- '; color:var(--ink-faint);}
   .gh-cta{margin-top:24px; text-align:center;}
 
+  /* AI-agent style explainer card */
+  .gh-ai-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:24px 26px; margin-bottom:24px; position:relative; overflow:hidden;
+    animation:aiFloat 5s ease-in-out infinite;
+  }
+  @keyframes aiFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+  .gh-ai-head{display:flex; align-items:center; gap:10px; margin-bottom:16px;}
+  .gh-ai-avatar{
+    width:30px; height:30px; border-radius:50%; flex:none;
+    background:conic-gradient(from 180deg,var(--green-bright),var(--rust),#7FD9A6,var(--green-bright));
+    display:flex; align-items:center; justify-content:center;
+  }
+  .gh-ai-avatar span{width:20px; height:20px; border-radius:50%; background:var(--panel); display:flex; align-items:center; justify-content:center;}
+  .gh-ai-avatar svg{width:13px; height:13px; color:var(--green);}
+  .gh-ai-name{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.02em;
+    background:linear-gradient(90deg,var(--green),var(--green-bright),var(--rust),var(--green));
+    background-size:300% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:gradientshift 5s linear infinite;
+  }
+  .gh-ai-body p{
+    font-family:var(--mono); font-size:13.5px; line-height:1.75; color:var(--ink-soft); margin:0 0 10px;
+  }
+  .gh-ai-body p:last-child{margin-bottom:0;}
+  .gh-ai-body b{color:var(--ink); font-weight:600;}
+  .gh-ai-body .gh-ai-typed{border-right:2px solid var(--green-bright); padding-right:2px;}
+
   /* ---------- TESTIMONIALS ---------- */
   .testi-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;}
   .testi-card{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:22px 24px;}
@@ -349,6 +410,29 @@
 
   /* ---------- BLOG ---------- */
   .blog-desc{max-width:70ch; color:var(--ink-soft); font-size:16px; margin-bottom:22px;}
+
+  /* ---------- RESUME ---------- */
+  .resume-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:10px;
+    padding:32px 34px; display:flex; align-items:center; justify-content:space-between;
+    gap:24px; flex-wrap:wrap;
+  }
+  .resume-left{display:flex; align-items:center; gap:18px;}
+  .resume-icon{
+    width:52px; height:52px; border-radius:9px; background:var(--green-wash);
+    border:1px solid #CFE3D6; display:flex; align-items:center; justify-content:center;
+    color:var(--green); flex:none;
+  }
+  .resume-icon svg{width:24px; height:24px;}
+  .resume-title{font-family:var(--serif); font-weight:600; font-size:19px; margin-bottom:4px;}
+  .resume-sub{font-family:var(--mono); font-size:12px; color:var(--ink-faint);}
+
+  /* Platform logo strip (online presence) */
+  .platform-strip{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:26px;}
+  .platform-logo{
+    width:44px; height:44px; object-fit:contain; border-radius:8px;
+    border:1px solid var(--line); background:var(--panel); padding:8px;
+  }
 
   /* ---------- CONTACT / FOOTER ---------- */
   footer{
@@ -393,6 +477,7 @@
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#testimonials">Mentors</a></li>
       <li><a href="#blog">Presence</a></li>
+      <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-social">
@@ -420,8 +505,9 @@ I ask questions, explore ideas, and build things that turn possibilities into so
 </p>
 
         <div class="query-line" id="queryLine">
-          <span class="prompt">sql&gt;</span>
+          <span class="prompt" id="promptSym">sql&gt;</span>
           <span class="typed" id="typedText"></span><span class="cursor"></span>
+          <span class="gen-dots" id="genDots"><span class="gen-dot"></span><span class="gen-dot"></span><span class="gen-dot"></span></span>
         </div>
 
         <div class="hero-ctas">
@@ -498,6 +584,7 @@ I ask questions, explore ideas, and build things that turn possibilities into so
         <div class="now-chips">
           <span class="chip">Product Analytics</span>
           <span class="chip">LLMs</span>
+          <span class="chip">RAG (Retrieval-Augmented Generation)</span>
           <span class="chip">MLflow</span>
           <span class="chip">MLOps</span>
           <span class="chip">AWS</span>
@@ -634,6 +721,7 @@ I ask questions, explore ideas, and build things that turn possibilities into so
 
         <div class="proj-card">
           <div class="proj-viz">
+            <img class="proj-shot" src="assets/images/projects/job-market-dashboard.jpg" alt="Job Market Analysis Dashboard screenshot" onerror="this.remove()" onload="this.nextElementSibling.style.display='none'">
             <svg viewBox="0 0 300 120" preserveAspectRatio="none">
               <rect x="10" y="60" width="22" height="50" fill="#3E8F63"/>
               <rect x="42" y="40" width="22" height="70" fill="#24603F"/>
@@ -664,6 +752,7 @@ I ask questions, explore ideas, and build things that turn possibilities into so
 
         <div class="proj-card">
           <div class="proj-viz">
+            <img class="proj-shot" src="assets/images/projects/tribological-prediction.jpg" alt="Tribological Behaviour Prediction screenshot" onerror="this.remove()" onload="this.nextElementSibling.style.display='none'">
             <svg viewBox="0 0 300 120" preserveAspectRatio="none">
               <circle cx="30" cy="90" r="4" fill="#24603F"/><circle cx="55" cy="70" r="4" fill="#3E8F63"/>
               <circle cx="80" cy="80" r="4" fill="#24603F"/><circle cx="105" cy="55" r="4" fill="#3E8F63"/>
@@ -692,6 +781,7 @@ I ask questions, explore ideas, and build things that turn possibilities into so
 
         <div class="proj-card">
           <div class="proj-viz">
+            <img class="proj-shot" src="assets/images/projects/saas-churn-prediction.jpg" alt="SaaS Sales and Churn Prediction screenshot" onerror="this.remove()" onload="this.nextElementSibling.style.display='none'">
             <svg viewBox="0 0 300 120" preserveAspectRatio="none">
               <path d="M20 100 L60 60 L100 85 L140 40 L180 65 L220 20 L260 50 L285 15" fill="none" stroke="#24603F" stroke-width="2.5"/>
               <path d="M20 100 L60 60 L100 85 L140 40 L180 65 L220 20 L260 50 L285 15 L285 112 L20 112 Z" fill="#3E8F63" opacity="0.15"/>
@@ -715,6 +805,7 @@ I ask questions, explore ideas, and build things that turn possibilities into so
 
         <div class="proj-card">
           <div class="proj-viz">
+            <img class="proj-shot" src="assets/images/projects/digital-wellness.jpg" alt="Smart Digital Wellness project screenshot" onerror="this.remove()" onload="this.nextElementSibling.style.display='none'">
             <svg viewBox="0 0 300 120" preserveAspectRatio="none">
               <path d="M150 25c-30 0-45 20-45 42 0 26 25 40 45 53 20-13 45-27 45-53 0-22-15-42-45-42z" fill="none" stroke="#24603F" stroke-width="3"/>
               <path d="M110 62h18l10-18 12 30 10-16h30" fill="none" stroke="#3E8F63" stroke-width="2.5"/>
@@ -772,14 +863,17 @@ I ask questions, explore ideas, and build things that turn possibilities into so
         <div class="ach-row">
           <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4a1 1 0 0 0-1 1c0 2.5 1.8 4.5 4 4.9M17 6h3a1 1 0 0 1 1 1c0 2.5-1.8 4.5-4 4.9"/></svg></div>
           <div class="ach-text"><strong>McKinsey &amp; Company Forward Program</strong><span>Selected trainee — 8-week business analytics &amp; leadership program.</span></div>
+          <img class="ach-thumb" src="assets/images/achievements/mckinsey-forward.jpg" alt="McKinsey Forward Program" onerror="this.remove()">
         </div>
         <div class="ach-row">
           <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 2 2.9 6 6.6.9-4.8 4.6 1.1 6.5L12 17l-5.8 3 1.1-6.5-4.8-4.6 6.6-.9Z"/></svg></div>
           <div class="ach-text"><strong>TCS CodeVita Season 12 — Global Rank 4,500</strong><span>Top 0.9% among 537,000+ participants.</span></div>
+          <img class="ach-thumb" src="assets/images/achievements/codevita.jpg" alt="TCS CodeVita certificate" onerror="this.remove()">
         </div>
         <div class="ach-row">
           <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h18v13H3z"/><path d="M8 21h8M12 16v5"/></svg></div>
           <div class="ach-text"><strong>Walmart Sparkathon — Awardee</strong><span>Recognized at Walmart's flagship innovation hackathon.</span></div>
+          <img class="ach-thumb" src="assets/images/achievements/walmart-sparkathon.jpg" alt="Walmart Sparkathon award" onerror="this.remove()">
         </div>
         <div class="ach-row">
           <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/></svg></div>
@@ -789,10 +883,12 @@ I ask questions, explore ideas, and build things that turn possibilities into so
         <div class="ach-row">
           <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
           <div class="ach-text"><strong>Aspire Leadership Program</strong><span>Selected participant — leadership and professional development program.</span></div>
+          <img class="ach-thumb" src="assets/images/achievements/aspire-leadership.jpg" alt="Aspire Leadership Program" onerror="this.remove()">
         </div>
         <div class="ach-row">
           <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 12h6M12 9v6"/></svg></div>
           <div class="ach-text"><strong>Finalist — NSUT Datasphere Challenge</strong><span>Competitive data analytics challenge.</span></div>
+          <img class="ach-thumb" src="assets/images/achievements/nsut-datasphere.jpg" alt="NSUT Datasphere Challenge" onerror="this.remove()">
         </div>
         <div class="ach-row">
           <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
@@ -802,10 +898,12 @@ I ask questions, explore ideas, and build things that turn possibilities into so
         <div class="ach-row">
           <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg></div>
           <div class="ach-text"><strong>5-Star SQL Badge</strong><span>HackerRank.</span></div>
+          <img class="ach-thumb" src="assets/images/achievements/hackerrank-sql.jpg" alt="HackerRank 5-Star SQL badge" onerror="this.remove()">
         </div>
         <div class="ach-row">
           <div class="ach-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
           <div class="ach-text"><strong>82 / 100 — Newton School Data Analyst Skill Assessment</strong><span>Benchmark score: 75+.</span></div>
+          <img class="ach-thumb" src="assets/images/achievements/newton-school-assessment.jpg" alt="Newton School Data Analyst Skill Assessment" onerror="this.remove()">
         </div>
       </div>
     </div>
@@ -836,6 +934,18 @@ I ask questions, explore ideas, and build things that turn possibilities into so
     <div class="wrap">
       <p class="eyebrow">github</p>
       <h2 class="section-title">GitHub Activity</h2>
+
+      <div class="gh-ai-card">
+        <div class="gh-ai-head">
+          <span class="gh-ai-avatar"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></span></span>
+          <span class="gh-ai-name">quick note on git &amp; github</span>
+        </div>
+        <div class="gh-ai-body">
+          <p><b>Git</b> is just a way to save snapshots of your code as you work, so you can always go back if something breaks. <b>GitHub</b> is where those snapshots live online — a shared home for the project that anyone on the team can pull from.</p>
+          <p>The everyday flow is simple: you <b>commit</b> small, meaningful changes with a clear message, work on a separate <b>branch</b> so the main code stays stable, and open a <b>pull request</b> when it's ready for someone to review before it gets merged in.</p>
+          <p>The habits that matter most: commit often, write messages that explain <i>why</i> not just <i>what</i>, keep a clean <b>.gitignore</b>, and read the diff before you push. Small, honest history beats one giant commit every time.</p>
+        </div>
+      </div>
       <div class="gh-grid">
         <div class="gh-card">
           <span class="gh-chart-label">stats</span>
@@ -912,6 +1022,7 @@ I ask questions, explore ideas, and build things that turn possibilities into so
       <div class="cert-grid">
 
         <div class="cert-card">
+          <img class="cert-logo" src="assets/images/certs/anthropic.png" alt="Anthropic logo" onerror="this.remove()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
             <div class="cert-name">AI Fluency Framework &amp; Foundations <span class="cert-status active">active</span></div>
@@ -921,6 +1032,7 @@ I ask questions, explore ideas, and build things that turn possibilities into so
         </div>
 
         <div class="cert-card cert-hidden" style="display:none;">
+          <img class="cert-logo" src="assets/images/certs/nasba-linkedin.png" alt="NASBA / LinkedIn Learning logo" onerror="this.remove()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
             <div class="cert-name">Certified Generative AI Tools Expert <span class="cert-status active">active</span></div>
@@ -930,6 +1042,7 @@ I ask questions, explore ideas, and build things that turn possibilities into so
         </div>
 
         <div class="cert-card cert-hidden" style="display:none;">
+          <img class="cert-logo" src="assets/images/certs/google-cloud.png" alt="Google Cloud logo" onerror="this.remove()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
             <div class="cert-name">Infrastructure and Application Modernization with Google Cloud <span class="cert-status active">active</span></div>
@@ -939,6 +1052,7 @@ I ask questions, explore ideas, and build things that turn possibilities into so
         </div>
 
         <div class="cert-card">
+          <img class="cert-logo" src="assets/images/certs/aws.png" alt="AWS logo" onerror="this.remove()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
             <div class="cert-name">AWS Cloud Practitioner Essentials <span class="cert-status active">active</span></div>
@@ -948,6 +1062,7 @@ I ask questions, explore ideas, and build things that turn possibilities into so
         </div>
 
         <div class="cert-card">
+          <img class="cert-logo" src="assets/images/certs/google-analytics.png" alt="Google Analytics logo" onerror="this.remove()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
             <div class="cert-name">Google Analytics Certification <span class="cert-status active">active</span></div>
@@ -957,6 +1072,7 @@ I ask questions, explore ideas, and build things that turn possibilities into so
         </div>
 
         <div class="cert-card">
+          <img class="cert-logo" src="assets/images/certs/linkedin-learning.png" alt="LinkedIn Learning logo" onerror="this.remove()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
             <div class="cert-name">Career Essentials in Data Analysis <span class="cert-status active">active</span></div>
@@ -966,6 +1082,7 @@ I ask questions, explore ideas, and build things that turn possibilities into so
         </div>
 
         <div class="cert-card">
+          <img class="cert-logo" src="assets/images/certs/nptel.png" alt="NPTEL logo" onerror="this.remove()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
             <div class="cert-name">Product Design and Manufacturing <span class="cert-status active">active</span></div>
@@ -975,6 +1092,7 @@ I ask questions, explore ideas, and build things that turn possibilities into so
         </div>
 
         <div class="cert-card cert-hidden" style="display:none;">
+          <img class="cert-logo" src="assets/images/certs/nptel.png" alt="NPTEL logo" onerror="this.remove()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
           <div>
             <div class="cert-name">Computer Integrated Manufacturing <span class="cert-status active">active</span></div>
@@ -1029,6 +1147,11 @@ I ask questions, explore ideas, and build things that turn possibilities into so
       <p class="eyebrow">online presence</p>
       <h2 class="section-title">The Timeless Analyst</h2>
       <p class="blog-desc">My personal brand, built in public across Substack, X, and YouTube — projects, learnings, and work in progress.</p>
+      <div class="platform-strip">
+        <img class="platform-logo" src="assets/images/logos/substack.png" alt="Substack" onerror="this.remove()">
+        <img class="platform-logo" src="assets/images/logos/x.png" alt="X (Twitter)" onerror="this.remove()">
+        <img class="platform-logo" src="assets/images/logos/youtube.png" alt="YouTube" onerror="this.remove()">
+      </div>
       <div class="chip-row" style="margin-bottom:26px;">
         <span class="chip">AI</span><span class="chip">Product Analytics</span><span class="chip">A/B Testing</span>
         <span class="chip">Root Cause Analysis</span><span class="chip">Case Studies</span><span class="chip">Data Storytelling</span>
@@ -1037,6 +1160,29 @@ I ask questions, explore ideas, and build things that turn possibilities into so
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
         Read on Substack
       </a>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume">
+    <div class="wrap">
+      <p class="eyebrow">resume</p>
+      <h2 class="section-title">Resume</h2>
+      <div class="resume-card">
+        <div class="resume-left">
+          <div class="resume-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h6M9 9h1"/></svg>
+          </div>
+          <div>
+            <div class="resume-title">Full Resume — PDF</div>
+            <div class="resume-sub">Updated periodically · SQL, Python, ML &amp; analytics engineering</div>
+          </div>
+        </div>
+        <a class="btn btn-primary" href="assets/resume/Manas-Srivastava-Resume.pdf" download target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>
+          Download Resume
+        </a>
+      </div>
     </div>
   </section>
 
@@ -1072,37 +1218,44 @@ I ask questions, explore ideas, and build things that turn possibilities into so
 </footer>
 
 <script>
-  // Typewriter effect for the hero SQL query line — cycles through two queries
+  // Streaming effect for the hero query line — alternates a SQL query and an AI-generation line
   (function(){
     var queries = [
-      "SELECT * FROM manas_srivastava WHERE role IN ('data_analyst','ai');",
-      "SELECT project_name, business_impact FROM portfolio ORDER BY impact DESC;"
+      { prompt: 'sql>', text: "SELECT project_name, business_impact FROM portfolio ORDER BY impact DESC;" },
+      { prompt: 'ai>',  text: "generate_insight(portfolio) → 'AI-powered analytics that ship business decisions'" }
     ];
     var el = document.getElementById('typedText');
+    var promptEl = document.getElementById('promptSym');
+    var dots = document.getElementById('genDots');
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduceMotion){ el.textContent = queries[0]; return; }
+    if(reduceMotion){ el.textContent = queries[0].text; return; }
     var qi = 0, i = 0, deleting = false;
+    function showDots(cb, ms){
+      dots.classList.add('on');
+      setTimeout(function(){ dots.classList.remove('on'); cb(); }, ms);
+    }
     function tick(){
-      var text = queries[qi];
+      var text = queries[qi].text;
+      promptEl.textContent = queries[qi].prompt;
       if(!deleting){
         i++;
         el.textContent = text.slice(0, i);
         if(i >= text.length){
           deleting = true;
-          setTimeout(tick, 1800);
+          setTimeout(tick, 1100);
           return;
         }
-        setTimeout(tick, 26);
+        setTimeout(tick, 12 + Math.random()*10);
       } else {
         i--;
         el.textContent = text.slice(0, i);
         if(i <= 0){
           deleting = false;
           qi = (qi + 1) % queries.length;
-          setTimeout(tick, 400);
+          showDots(function(){ setTimeout(tick, 80); }, 500);
           return;
         }
-        setTimeout(tick, 14);
+        setTimeout(tick, 7);
       }
     }
     tick();
@@ -1121,26 +1274,6 @@ I ask questions, explore ideas, and build things that turn possibilities into so
     });
   })();
 
-  (function(){
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduceMotion) return;
-    var targets = document.querySelectorAll('section, footer');
-    targets.forEach(function(t){
-      t.style.opacity = 0;
-      t.style.transform = 'translateY(16px)';
-      t.style.transition = 'opacity .6s ease, transform .6s ease';
-    });
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)';
-          io.unobserve(entry.target);
-        }
-      });
-    }, {threshold:0.08});
-    targets.forEach(function(t){ io.observe(t); });
-  })();
 </script>
 
 </body>
